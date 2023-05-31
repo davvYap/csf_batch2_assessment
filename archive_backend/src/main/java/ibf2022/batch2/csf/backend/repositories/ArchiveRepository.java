@@ -70,7 +70,7 @@ public class ArchiveRepository {
 	// ])
 	//
 	public List<Document> getBundles() {
-		ProjectionOperation pop = Aggregation.project("title", "date").andExclude("_id");
+		ProjectionOperation pop = Aggregation.project("bundleId", "title", "date").andExclude("_id");
 		SortOperation sop = Aggregation.sort(Sort.by(Direction.DESC, "date")).and(Sort.by(Direction.ASC, "title"));
 
 		Aggregation pipeline = Aggregation.newAggregation(pop, sop);

@@ -12,6 +12,7 @@ export interface archive {
 }
 
 export interface archiveBundle {
+  bundleId: string;
   title: string;
   date: number;
 }

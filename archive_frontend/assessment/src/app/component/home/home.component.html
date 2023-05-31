@@ -5,7 +5,9 @@
   </div>
   <div *ngIf="archiveBundle$ | async as archive">
     <div *ngFor="let a of archive">
-      <p>{{ a.title | titlecase }} --- {{ a.date | date }}</p>
+      <p [routerLink]="['/display', a.bundleId]">
+        {{ a.title | titlecase }} --- {{ a.date | date }}
+      </p>
     </div>
   </div>
 </div>
