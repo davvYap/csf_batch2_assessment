@@ -1,0 +1,11 @@
+<div class="display-flex">
+  <h1>Photo Storage</h1>
+  <div>
+    <button type="button" [routerLink]="['/upload']">Upload</button>
+  </div>
+  <div *ngIf="archiveBundle$ | async as archive">
+    <div *ngFor="let a of archive">
+      <p>{{ a.title | titlecase }} --- {{ a.date | date }}</p>
+    </div>
+  </div>
+</div>

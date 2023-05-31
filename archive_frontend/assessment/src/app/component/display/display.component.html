@@ -1,0 +1,19 @@
+<div class="display-flex" *ngIf="archive$ | async as archive; else loading">
+  <h1>{{ archive.title | titlecase }}</h1>
+  <h2>by {{ archive.name | titlecase }} on {{ archive.date | date }}</h2>
+  <p>{{ archive.comments }}</p>
+  <div class="img-flex">
+    <span *ngFor="let img of archive.urls">
+      <img [src]="img" alt="img" />
+    </span>
+  </div>
+  <div>
+    <button type="button" (click)="back()">Back</button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="center">
+    <code>Loading...</code>
+  </div>
+</ng-template>

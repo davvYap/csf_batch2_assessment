@@ -1,0 +1,50 @@
+<h1 class="center">Upload Page</h1>
+<div class="display-flex">
+  <form [formGroup]="form" (submit)="post()">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>
+          <input
+            type="text"
+            size="30"
+            placeholder="Name"
+            formControlName="name"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Title:</td>
+        <td>
+          <input
+            type="text"
+            size="30"
+            placeholder="Title"
+            formControlName="title"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Comments:</td>
+        <td>
+          <textarea cols="30" rows="10" formControlName="comments"></textarea>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Archive:</td>
+        <td><input type="file" accept=".zip" #archiveFile /></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td class="right">
+          <button type="button" (click)="cancel()">Cancel</button
+          ><button type="submit" [disabled]="invalidForm()">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
